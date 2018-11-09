@@ -15,6 +15,8 @@
     
     <!-- Code for the svg file of the pathway -->
     
+    <p>
+    
     <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-opacity:1; color-rendering:auto; color-interpolation:auto; stroke:black; text-rendering:auto; stroke-linecap:square; stroke-miterlimit:10; stroke-opacity:1; shape-rendering:auto; fill:black; stroke-dasharray:none; font-weight:normal; stroke-width:1; font-family:&apos;Dialog&apos;; font-style:normal; stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; image-rendering:auto;" width="508" height="397" xmlns="http://www.w3.org/2000/svg">
         
         <defs id="genericDefs"
@@ -93,8 +95,39 @@
       >Acetyl-CoA</text
     ></g
   ></g
-></svg
->
+></svg>
+        
+    </p>
+    
+    <br>
+    
+    
+<!-- Code for the first table -->
+        
+     <table style="width:100%">
+    <tr>
+      <th>Compound</th>
+      <th>Diseases</th> 
+      <th>medicine</th>
+    </tr>
+    <tr>
+      <td>Acetyl-CoA</td>
+      <td></td> 
+      <td></td>
+    </tr>
+    <tr>
+      <td>HMGCS1</td>
+      <td></td> 
+      <td></td>
+    </tr>
+    <tr>
+      <td>HMG-CoA</td>
+      <td></td> 
+      <td></td>
+    </tr>
+  </table>
+    
+    
         
 </body>
 
