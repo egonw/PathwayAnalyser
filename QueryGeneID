@@ -1,0 +1,8 @@
+SELECT DISTINCT ?protein ?proteinLabel ?gene ?geneLabel ?ensemble WHERE {
+  VALUES ?uniprotID {"Q01581" "P04035" "Q03426" "Q6FGV9" "P53602" "Q13907" "P14324" "Q6IAX1" "Q9UNR6" "P48449" "Q16850" "Q15800" "Q15738" "O75845" "Q9UBM7"} 
+  ?protein wdt:P352 ?uniprotID . 
+  ?protein wdt:P702 ?gene .
+  ?gene wdt:P594 ?ensemble . 
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  }
+       
