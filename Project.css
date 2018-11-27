@@ -3,6 +3,11 @@ body{
     background-color: white;
 }
 
+#json, h4{
+    
+    float:left;
+}
+
 h1{
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;

@@ -2,6 +2,14 @@
 
 <html>
 
+<script type="text/javascript" src="https://egonw.github.io/pils/lib/purl.js"></script>
+    
+<script type="text/javascript" src="https://egonw.github.io/pils/lib/jquery-1.9.1.min.js"></script>
+    
+<script type="text/javascript" src="https://egonw.github.io/pils/lib/d3.v3.min.js"></script>
+    
+<script type="text/javascript" src="https://egonw.github.io/pils/src/combined.js"></script>
+    
 <head>
 
     <title>Pathway</title>
@@ -9,6 +17,8 @@
     <link rel="stylesheet" href="Project.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    
+
 
 
     
@@ -21,7 +31,10 @@
     <h2>Cholesterol Pathway</h2>
     </header>  
     
-  <img  src="WP197_101819.svg" height="100%" width="100%">
+    
+    
+  <img  src="WP197_101819.svg" height="100%" width="100%"> 
+
 
     <!--
     <object data="WP197_101819.svg" type="image/svg+xml"
@@ -49,83 +62,489 @@
        
     
 <!-- Code for the first table -->
-        
+    
+    
      <table style="width:40%">
     <tr>
       <th id = "Target">Target</th>
-      <th id = "Diseases">Diseases</th> 
+      <th id = "Diseases">Present in Pathways</th> 
       <th id = "Medicine">Drugs</th>
     </tr>
     
     <tr>
       <td>HMGCS1</td>
-      <td></td> 
+      <td>
+        
+        
+          <ul id="HMGCS1"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("HMGCS1").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000112972","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+        
+          
+        </td> 
       <td></td>
     </tr>
          
     <tr>
         <td>HMGCR</td>
-        <td></td> 
+        <td>
+        
+        
+            <ul id="HMGCR"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("HMGCR").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000113161","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+            
+        </td> 
         <td></td>
     </tr>
          
     <tr>
       <td>MVK</td>
-      <td></td> 
+      
+        <td>
+            
+        <ul id="MVK"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("MVK").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000110921","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+          
+        </td> 
+        
       <td></td>
+        
     </tr>
          
     <tr>
         <td>PMVK</td>
-        <td></td> 
+        <td>
+        </td> 
         <td></td>
     </tr>
 
     <tr>
         <td>MVD</td>
-        <td></td> 
+        <td>
+            
+            <ul id="MVD"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("MVD").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000167508","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+            
+        
+        </td> 
         <td></td>
     </tr>
 
     <tr>
         <td>IDI1</td>
-        <td></td> 
+        <td>
+        
+            <ul id="IDI1"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("IDI1").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000067064","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+        
+            
+        
+        </td> 
         <td></td>
     </tr>
 
     <tr>
         <td>FDPS</td>
-        <td></td> 
+        <td>
+        
+            <ul id="FDPS"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+        
+        </td> 
         <td></td>
     </tr>
 
     <tr>
         <td>FDST1</td>
-        <td></td> 
+        <td>
+        
+        
+                        <ul id="FDPS"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+            
+        
+        </td> 
         <td></td>
     </tr>
 
     <tr>
         <td>SQLE</td>
-        <td></td> 
+        <td>
+        
+        
+                        <ul id="FDPS"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+            
+        
+        </td> 
         <td></td>
     </tr>   
 
     <tr>
         <td>LSS</td>
-        <td></td> 
+        <td>
+        
+        
+                        <ul id="FDPS"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+            
+        
+        </td> 
         <td></td>
     </tr> 
 
     <tr>
         <td>CYP51A1</td>
-        <td></td> 
+        <td>
+        
+        
+                        <ul id="FDPS"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+        
+        
+        </td> 
         <td></td>
     </tr> 
 
     <tr>
         <td>SC4MOL</td>
-        <td></td> 
+        <td>
+        
+        
+                        <ul id="FDPS"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+            
+            
+        </td> 
         <td></td>
     </tr> 
 
@@ -147,9 +566,13 @@
         <td></td>
     </tr> 
   </table>
-    
-   
-    
+
+
+<h4>JSON</h4>
+
+
+
+
         
 </body>
 
