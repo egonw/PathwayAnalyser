@@ -3,7 +3,12 @@ body{
     background-color: white;
 }
 
-h1{
+#json, h4{
+    
+    float:left;
+}
+
+#hed1{
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 5em;
@@ -12,6 +17,7 @@ h1{
     text-align: center;
     position:relative;
     top:3vh;
+    
 }
 
 h2{
@@ -33,6 +39,7 @@ table, th, td {
     border-bottom: 1px solid grey;
 }
 
+
 tr:hover {background-color:#f5f5f5;}
 
 th{
@@ -52,12 +59,29 @@ th, td{
 img {
     background: red;
     width: 50%;
-    float: left;
-    position: relative;
+    position:relative;
     left: 2vw;
+    
+    
 }
 table{
     position: relative;
-    left: 5vw;
-    top: 5vh;
+    left: 55vw;
+    top: -140vh;
+    
+}
+
+ul {
+    list-style-type:square; 
+    line-height: 2;
+}
+
+#he1 {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    left: 2vw;
+    top: 32vh;
+    width: 15%;
+    
 }
