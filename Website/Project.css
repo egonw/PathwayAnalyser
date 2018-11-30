@@ -1,18 +1,16 @@
+
+
 body{
     
     background-color: white;
 }
 
-#json, h4{
-    
-    float:left;
-}
 
 #hed1{
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 5em;
-       color: whitesmoke;
+    color: whitesmoke;
   
     text-align: center;
     position:relative;
@@ -24,10 +22,18 @@ h2{
     font-family: 'Muli', sans-serif;
     font-size: 2em;
     text-align: center;
-   color: rgb(230,230,230);
+    color: rgb(230,230,230);
 
     position: relative;
-    top: -4vh;
+    top: -1vh;
+}
+
+#hed3{
+    font-family: 'Muli', sans-serif;
+    font-size: 2em;    
+    position: relative;
+
+    
 }
 
 header{
@@ -35,41 +41,58 @@ header{
     background-color: firebrick;
     height: 20vh;
 }
+
 table, th, td {
     border-bottom: 1px solid grey;
 }
 
 
-tr:hover {background-color:#f5f5f5;}
+ .active, .collapsible:hover {
+    background-color: firebrick;
+    }
 
-th{
-    
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: indianred;
+ .collapsible {
+    background-color: #777;
     color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+        
+    }
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
 }
 
-th, td{
-    text-align: center
-    border: 1px solid #ddd;
-    padding: 8px;
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
+
+    .content {
+    padding: 0 18px;
+    width: 47.5%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif
+    }
+
 img {
     background: red;
     width: 50%;
-    position:relative;
-    left: 2vw;
-    
-    
+    position:absolute;
+    left: 50vw;
 }
-table{
-    position: relative;
-    left: 55vw;
-    top: -140vh;
-    
-}
+
 
 ul {
     list-style-type:square; 
