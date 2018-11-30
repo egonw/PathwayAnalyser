@@ -41,6 +41,7 @@
     
     <object data="WP197_101819.svg" type="image/svg+xml"
          id="pathway" width="100%" height="100%"></object>
+    
     <script>
               
               var a = document.getElementById("pathway");
@@ -71,6 +72,8 @@
     
 <!-- Code for the first table -->
     
+   
+    
     
      <table style="width:40%">
     <tr>
@@ -78,8 +81,11 @@
       <th id = "Diseases">Present in Pathways</th> 
       <th id = "Medicine">Drugs</th>
     </tr>
-    
-    <tr>
+         
+         
+          
+         
+         <tr>
       <td>HMGCS1</td>
       <td>
         
@@ -95,8 +101,6 @@
                 );
 
                 var handleAssociations = function (success, status, jsonData){
-
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
 
                     var itemCount = jsonData.items.length;
 
@@ -139,8 +143,6 @@
 
                 var handleAssociations = function (success, status, jsonData){
 
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
-
                     var itemCount = jsonData.items.length;
 
                     for (var i = 0; i < itemCount; i++) {
@@ -180,8 +182,6 @@
                 );
 
                 var handleAssociations = function (success, status, jsonData){
-
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
 
                     var itemCount = jsonData.items.length;
 
@@ -231,8 +231,6 @@
 
                 var handleAssociations = function (success, status, jsonData){
 
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
-
                     var itemCount = jsonData.items.length;
 
                     for (var i = 0; i < itemCount; i++) {
@@ -272,8 +270,6 @@
                 );
 
                 var handleAssociations = function (success, status, jsonData){
-
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
 
                     var itemCount = jsonData.items.length;
 
@@ -316,8 +312,6 @@
 
                 var handleAssociations = function (success, status, jsonData){
 
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
-
                     var itemCount = jsonData.items.length;
 
                     for (var i = 0; i < itemCount; i++) {
@@ -346,7 +340,7 @@
         <td>
         
         
-                        <ul id="FDPS"></ul>
+                <ul id="FDST1"></ul>
 
             <!-- creating table with data -->
 
@@ -358,8 +352,6 @@
 
                 var handleAssociations = function (success, status, jsonData){
 
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
-
                     var itemCount = jsonData.items.length;
 
                     for (var i = 0; i < itemCount; i++) {
@@ -369,7 +361,7 @@
                         if (item.title) {
 
                             var node = document.createElement("li");
-                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDST1").appendChild(node);
                         }
 
                     }
@@ -389,7 +381,7 @@
         <td>
         
         
-                        <ul id="FDPS"></ul>
+                        <ul id="SQLE"></ul>
 
             <!-- creating table with data -->
 
@@ -401,8 +393,6 @@
 
                 var handleAssociations = function (success, status, jsonData){
 
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
-
                     var itemCount = jsonData.items.length;
 
                     for (var i = 0; i < itemCount; i++) {
@@ -412,7 +402,7 @@
                         if (item.title) {
 
                             var node = document.createElement("li");
-                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("SQLE").appendChild(node);
                         }
 
                     }
@@ -432,7 +422,7 @@
         <td>
         
         
-                        <ul id="FDPS"></ul>
+                        <ul id="LSS"></ul>
 
             <!-- creating table with data -->
 
@@ -444,8 +434,6 @@
 
                 var handleAssociations = function (success, status, jsonData){
 
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
-
                     var itemCount = jsonData.items.length;
 
                     for (var i = 0; i < itemCount; i++) {
@@ -455,7 +443,7 @@
                         if (item.title) {
 
                             var node = document.createElement("li");
-                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("LSS").appendChild(node);
                         }
 
                     }
@@ -475,7 +463,7 @@
         <td>
         
         
-                        <ul id="FDPS"></ul>
+                        <ul id="CYP51A1"></ul>
 
             <!-- creating table with data -->
 
@@ -487,8 +475,6 @@
 
                 var handleAssociations = function (success, status, jsonData){
 
-                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
-
                     var itemCount = jsonData.items.length;
 
                     for (var i = 0; i < itemCount; i++) {
@@ -498,7 +484,7 @@
                         if (item.title) {
 
                             var node = document.createElement("li");
-                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("CYP51A1").appendChild(node);
                         }
 
                     }
@@ -518,7 +504,87 @@
         <td>
         
         
-                        <ul id="FDPS"></ul>
+                        <ul id="SC4MOL"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("SC4MOL").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+            
+            
+        </td> 
+        <td></td>
+    </tr> 
+
+    <tr>
+        <td>NSDHL</td>
+        <td>
+        
+             <ul id="NSDHL"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("NSDHL").appendChild(node);
+                        }
+
+                    }
+
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000147383","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+        
+        </td> 
+        <td></td>
+    </tr> 
+
+    <tr>
+        <td>SC5DL</td>
+        <td>
+        
+         <ul id="SC5DL"></ul>
 
             <!-- creating table with data -->
 
@@ -541,36 +607,62 @@
                         if (item.title) {
 
                             var node = document.createElement("li");
-                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("SC5DL").appendChild(node);
                         }
 
                     }
 
                 };
-                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000109929","Homo sapiens", null, null, "all", null, handleAssociations); 
 
             </script>
-            
             
         </td> 
         <td></td>
     </tr> 
 
     <tr>
-        <td>NSDHL</td>
-        <td></td> 
-        <td></td>
-    </tr> 
-
-    <tr>
-        <td>SC5DL</td>
-        <td></td> 
-        <td></td>
-    </tr> 
-
-    <tr>
         <td>DHCR7</td>
-        <td></td> 
+        <td>
+        
+         <ul id="DHCR7"></ul>
+
+            <!-- creating table with data -->
+
+            <script type="text/javascript">
+
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+
+                var handleAssociations = function (success, status, jsonData){
+
+                    d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+
+                    var itemCount = jsonData.items.length;
+
+                    for (var i = 0; i < itemCount; i++) {
+
+                        item = jsonData.items[i]
+
+                        if (item.title) {
+
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("DHCR7").appendChild(node);
+                        }
+
+                    }
+                    
+                    if(status = 404){
+                        console.log("No results")
+                    }
+
+                };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000172893","Homo sapiens", null, null, "all", null, handleAssociations); 
+
+            </script>
+            
+        </td> 
         <td></td>
     </tr> 
   </table>
