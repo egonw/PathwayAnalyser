@@ -1,0 +1,118 @@
+<html>
+<head>
+  <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/master/dist/wikidata-sdk.js"></script>
+    
+    <script type="text/javascript" src="https://egonw.github.io/pils/lib/purl.js"></script>
+    
+<script type="text/javascript" src="https://egonw.github.io/pils/lib/jquery-1.9.1.min.js"></script>
+    
+<script type="text/javascript" src="https://egonw.github.io/pils/lib/d3.v3.min.js"></script>
+    
+<script type="text/javascript" src="https://egonw.github.io/pils/src/combined.js"></script>
+</head>
+
+<body>
+    
+    <h1 id = "h1">
+    
+    Hey
+        
+    </h1>
+    
+    <ul id = "list">
+    
+    </ul>
+    
+    <table id = "table">
+        
+        <tr>
+            <th>
+            </th>
+        </tr>
+    
+    </table>
+  
+    <pre id="output">
+    
+    Loading...
+    
+    </pre>
+    
+    <script type="text/javascript">
+      
+      query = "SELECT DISTINCT ?protein ?proteinLabel ?gene ?geneLabel ?ensemble WHERE {VALUES ?uniprotID{ 'Q01581' 'P04035' 'Q03426' 'Q6FGV9' 'P53602' 'Q13907' 'P14324' 'Q6IAX1' 'Q9UNR6' 'P48449' 'Q16850' 'Q15800' 'Q15738' 'O75845' 'Q9UBM7'} ?protein wdt:P352 ?uniprotID . ?protein wdt:P702 ?gene . ?gene wdt:P594 ?ensemble . SERVICE wikibase:label { bd:serviceParam wikibase:language '[AUTO_LANGUAGE],en'. }}"
+ 
+    fetch(
+      wdk.sparqlQuery(query)
+    ).then( response => response.json()
+    ).then( wdk.simplify.sparqlResults
+    ).then(function (response) {
+              
+        //JSON.stringify(response, undefined, 2).protein;
+          
+        d3.select("#output").html("<pre>" + JSON.stringify(response, undefined, 2) + "</pre>");
+        
+        console.log(JSON.stringify(response, undefined, 2).length)
+        
+               
+            
+        for (var i = 1; i < response.length; ++i){
+            
+                var item = response[i]
+                
+                    protein = item.protein.label
+                    gene = item.gene.label
+                    ensemble = item.ensemble
+            
+                    console.log(gene)
+                    console.log(protein)
+                    console.log(ensemble)
+            
+                    if(item.protein.label) {
+                                                
+                    var node = document.createElement("li");
+
+                    var textnode = document.createTextNode(item.protein.label); 
+                    node.appendChild(textnode); 
+                    document.getElementById("list").appendChild(node);   }     
+        }
+    }
+       )
+          
+         // var itemCount = response.protein.length;
+         // console.log(itemCount);
+        
+
+         
+          
+           // var table = document.getElementById('table');
+    
+    
+    //for(var i = 0; i < response.length; i++){
+            
+      //   var gene = response.gene[i];
+        //var protein = response.protein[i];
+            
+    //    if (protein.label)
+                            
+            
+              //  var node = document.createElement("tr");
+
+               // var textnode = document.createTextNode(protein.label); 
+               // node.appendChild(textnode); 
+              //  document.getElementById("table").appendChild(node);
+            
+        
+    //}
+          
+    
+    
+        
+      
+  </script>
+    
+ 
+    
+</body>
+    
+</html>
