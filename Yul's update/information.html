@@ -1,0 +1,207 @@
+<html>
+<head>
+  <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/master/dist/wikidata-sdk.js"></script>
+    
+    <script type="text/javascript" src="https://egonw.github.io/pils/lib/purl.js"></script>
+    
+
+    <script type="text/javascript" src="https://egonw.github.io/pils/lib/jquery-1.9.1.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://egonw.github.io/pils/lib/d3.v3.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://egonw.github.io/pils/src/combined.js"></script>
+    
+    
+    <title>Pathway Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Project.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    
+</head>
+
+<body>
+       
+    
+
+    <header>
+    <h1 id="hed1">Lipid Pathways</h1>
+    <h2>Cholesterol Pathway</h2>
+    </header>  
+    
+    
+    <nav>
+   
+    <a id="tab1" href="introduction.html">Introduction</a>
+    <a id="tab2" href="information.html">Pathway Information</a>
+    <a id ="tab3" href="targets.html">Targets and Respective Pathways</a>
+    
+    </nav>
+
+    <iframe src = "https://www.wikipathways.org/index.php/Pathway:WP197?view=widget" name="myiframe" id = "iframe2" width="600px" height="500px"></iframe>
+
+
+
+    <!-- Code for the first table -->
+
+
+
+    
+  <button class = "collapsible">Ensembl ID | Gene | Protein</button>
+    
+    <div class = "content" id = "wiki"> 
+    
+    <script type="text/javascript">
+      
+      query = "SELECT DISTINCT ?protein ?proteinLabel ?gene ?geneLabel ?ensemble WHERE {VALUES ?uniprotID{ 'Q01581' 'P04035' 'Q03426' 'Q6FGV9' 'P53602' 'Q13907' 'P14324' 'Q6IAX1' 'Q9UNR6' 'P48449' 'Q16850' 'Q15800' 'Q15738' 'O75845' 'Q9UBM7'} ?protein wdt:P352 ?uniprotID . ?protein wdt:P702 ?gene . ?gene wdt:P594 ?ensemble . SERVICE wikibase:label { bd:serviceParam wikibase:language '[AUTO_LANGUAGE],en'. }}"
+ 
+    fetch(
+      wdk.sparqlQuery(query)
+    ).then( response => response.json()
+    ).then( wdk.simplify.sparqlResults
+    ).then(function (response) {
+              
+        //JSON.stringify(response, undefined, 2).protein;
+          
+        d3.select("#output").html("<pre>" + JSON.stringify(response, undefined, 2) + "</pre>");
+        
+        console.log(JSON.stringify(response, undefined, 2).length)
+        
+               
+            
+        for (var i = 1; i < response.length; ++i){
+            
+                var item = response[i]
+                
+                    protein = item.protein.label
+                    gene = item.gene.label
+                    ensemble = item.ensemble
+            
+                    console.log(gene)
+                    console.log(protein)
+                    console.log(ensemble)
+            
+                    if(item.protein.label) {
+                                                
+                    var node = document.createElement("li");
+
+                    var textnode = document.createTextNode(ensemble + " - " + gene + " - " + protein ); 
+                    node.appendChild(textnode); 
+                    document.getElementById("wiki").appendChild(node);   }     
+        }
+    }
+           
+       )
+                
+      
+  </script>
+    
+</div>
+
+    <!-- Collapsible clicking -->
+    
+    <script>
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+            for (i = 0; i < coll.length; i++) {
+
+                coll[i].addEventListener("click", function() {
+
+                    this.classList.toggle("active");
+
+                    var content = this.nextElementSibling;
+
+
+                    if (content.style.maxHeight){
+
+                        content.style.maxHeight = null;
+
+                    } 
+
+                    else {
+
+                        content.style.maxHeight = content.scrollHeight + "px";
+
+                    } 
+
+                }
+                                        );
+
+            }
+
+    </script>
+    
+
+    <svg  id= "grad" height="20" width="300" style="border: 1px solid black;">
+
+    <defs>
+ 
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+  
+            <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
+   
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+ 
+        </linearGradient>
+
+    </defs>
+    
+    <rect x="50" y="0" width="300" height="20" fill="url(#grad1)" />
+    
+    </svg>
+
+
+
+    <p id="target1">
+
+        6 pathways
+<!--
+
+        <svg height="50" width="400">
+
+            <rect x="0" y="0" width="20" height="20" fill= "rgb(0,0,255)" />
+        
+        </svg>
+-->
+    
+    </p>
+
+
+    <p id = "target2">
+
+        0 pathways
+
+<!--
+        <svg height="50" width="400">
+ 
+            <rect x="0" y="0" width="20" height="20" fill= "rgb(255,255,255)" />
+
+        </svg>
+-->
+    
+    </p>
+
+
+<!--
+    <p id = "target3">
+
+        Target 3 50% (5 pathways)
+
+        <svg height="50" width="400">
+ 
+            <rect x="0" y="0" width="20" height="20" fill= "rgb(127,127,255)" />
+
+        </svg>
+
+    </p>
+-->
+ 
+    
+</body>
+    
+</html>
