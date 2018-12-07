@@ -1,15 +1,12 @@
 
 
 body{
-    margin: 0;
-    padding: 0;
+    
     background-color: white;
 }
 
 
 #hed1{
-        margin: 0;
-
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 5em;
@@ -23,7 +20,7 @@ body{
 
 #header1{
     
-    top:0%;
+    top:0vh;
     background-color: royalblue;
     
 }
@@ -35,17 +32,7 @@ h2{
     color: rgb(230,230,230);
 
     position: relative;
-    
-}
-
-.intro{
-    margin-left:1;
-    font-family: 'Muli', sans-serif;
-    font-size: 1em;
-    left:10px;
-    width: 50%;
-    
-
+    top: -1vh;
 }
 
 #hed3{
@@ -105,20 +92,19 @@ header{
 
 #iframe {
     background: white;
-    width: 48%;
+    width: 50%;
     position:absolute;
     left: 50vw;
-    top:30vh;
 }
 
 
 #iframe2{
     
     background: white;
-    width: 48%;
+    width: 50%;
     position:absolute;
     left: 50vw;
-    top:25vh;
+    top:26vh;
     
 }
 
@@ -140,7 +126,7 @@ nav {
     line-height: 3;
     background-color: cornflowerblue;
     height: 5vh;
-    width: 50%;
+    width: 20vw;
     float: right;
     text-decoration: none;
     text-align: center;
@@ -148,7 +134,10 @@ nav {
     font-family: "montserrat";    
     display: block;
     text-decoration: none;
-    top: 100hv;
+/*    padding-right: 10vw;
+    */
+
+    margin-right: 10vw;
 
 }
 
@@ -175,6 +164,19 @@ nav {
     background-color: midnightblue;
 }
 
+#tab3:hover{
+    
+    animation-duration: 0.2s;
+    background-color: midnightblue;
+    
+}
+
+#Legend{
+    
+    left:75vw;
+    top:104vh;
+    
+}
 
 #target1, #target2, #target3 {
 
@@ -187,22 +189,30 @@ nav {
 
 #target1{
     
-    left: 84vw;
+    left: 90vw;
     top:91vh;
 }
 
 #target2{
     
-    left:62vw;
+    left:65vw;
     top:91vh;
     
 }
 
 #grad{
+    
+/*    width: 50%;*/
     position:absolute;
-    left: 65vw;
+    left: 70vw;
     top:90vh;
+  
 
+}
+
+#click:hover{
+      animation-duration: 0.2s;
+    background-color: midnightblue;
 }
 
 
