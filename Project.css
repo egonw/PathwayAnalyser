@@ -1,0 +1,226 @@
+
+
+body{
+    
+    background-color: white;
+}
+
+
+#hed1{
+    margin: 0;
+    padding;0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 5em;
+    color: whitesmoke;
+  
+    text-align: center;
+    position:relative;
+    top:3vh;
+    
+}
+
+#header1{
+    
+    top:0vh;
+    background-color: royalblue;
+    
+}
+
+h2{
+    font-family: 'Muli', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    color: rgb(230,230,230);
+
+    position: relative;
+    top: -1vh;
+}
+
+#hed3{
+    font-family: 'Muli', sans-serif;
+    font-size: 2em;    
+    position: relative;
+
+    
+}
+
+header{
+    width: 100%;
+    background-color:royalblue;
+    height: 20vh;
+    top: 0vh;
+}
+
+#intro{
+width: 48%;
+ font-family: 'Muli', sans-serif;
+}
+
+
+
+
+ .active, .collapsible:hover {
+    background-color: cornflowerblue;
+    }
+
+ .collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+        
+    }
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+/*    float: right;*/
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+    .content {
+    padding: 0 18px;
+    width: 47.5%;
+    max-height: 0;
+    overflow: hidden;
+/*    transition: max-height 0.2s ease-out;*/
+    background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif
+    }
+
+#iframe {
+    background: white;
+    width: 50%;
+    position:absolute;
+    left: 50vw;
+}
+
+
+#iframe2{
+    
+    background: white;
+    width: 50%;
+    position:absolute;
+    left: 50vw;
+    top:26vh;
+    
+}
+
+
+ul {
+    list-style-type:square; 
+    line-height: 2;
+}
+
+
+nav {
+    color: red;
+    height: 5vh;
+    background-color:cornflowerblue;
+}
+
+#click{
+    
+    line-height: 3;
+    background-color: cornflowerblue;
+    height: 5vh;
+    width: 20vw;
+    float: right;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-family: "montserrat";    
+    display: block;
+    text-decoration: none;
+/*    padding-right: 10vw;
+    */
+
+    margin-right: 10vw;
+
+}
+
+#tab1, #tab2, #tab3 {
+    line-height: 3;
+    text-align: center;
+    background-color: cornflowerblue;
+    height: 5vh;
+    width: 20vw;
+    display: block;
+    float: left;
+    text-decoration: none;
+    color: white;
+    font-family: "montserrat";
+}
+
+#tab2:hover {
+    animation-duration: 0.2s;
+    background-color: midnightblue;
+}
+
+#tab1:hover{
+     animation-duration: 0.2s;
+    background-color: midnightblue;
+}
+
+#tab3:hover{
+    
+    animation-duration: 0.2s;
+    background-color: midnightblue;
+    
+}
+
+#Legend{
+    
+    left:75vw;
+    top:104vh;
+    
+}
+
+#target1, #target2, #target3 {
+
+    font-family: 'Montserrat', sans-serif;
+     position:absolute;
+    left: 70vw;
+    top:105vh;
+
+}
+
+#target1{
+    
+    left: 90vw;
+    top:91vh;
+}
+
+#target2{
+    
+    left:65vw;
+    top:91vh;
+    
+}
+
+#grad{
+    
+/*    width: 50%;*/
+    position:absolute;
+    left: 70vw;
+    top:90vh;
+  
+
+}
+
+#click:hover{
+      animation-duration: 0.2s;
+    background-color: midnightblue;
+}
+

@@ -1,0 +1,429 @@
+<!-- Targets and Respective Pathways tab. Each proteins involved in the pathway are displayed in a collapsible table, which can be opened when clicked and contains 
+the other pathways the protein is involved in. The table is filled using an Open Phacts call. On the right side, the cholesterol biosynthesis pathway is 
+showed. When a protein is selected in the table, that same protein will be highlighted in the visualisation of the pathway. When the tab 'Present in Pathways'
+is clicked, the Pathway highlights all proteins in respect of the involvement in other pathwyas, according to the legend.-->
+
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+
+    <script type="text/javascript" src="https://egonw.github.io/pils/lib/d3.v3.min.js"></script>
+    <script type="text/javascript" src="https://egonw.github.io/pils/src/combined.js"></script>
+
+    <title>Pathway</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Project.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"> 
+ 
+</head>
+
+<body>
+    
+    <header id="header1">
+    <h1 id="hed1">Lipid Pathways</h1>
+    <h2>Cholesterol Pathway</h2>
+    </header>  
+    
+    <!-- Navagation between tabs and the colours given to the proteins when 'Targets and Respective Pathways' is clicked are defined. -->
+    <nav>
+    <a id="tab1" href="introduction.html">Introduction</a>
+    <a id="tab2" href="information.html">Pathway Information</a>
+    <a id ="tab3" href="targets.html">Targets and Respective Pathways</a>
+        
+    <a id="click" href="https://www.wikipathways.org/wpi/PathwayWidget.php?id=WP197&label[]=HMGCS1&label[]=HMGCR&label[]=MVK&label[]=MVD&label[]=IDI1&label[]=FDPS&label[]=FDFT1&label[]=LSS&label[]=CYP51A1&label[]=SC5DL&label[]=DHCR7&colors=%23FF5555,%23FF0000,%23FFD5D5,%23FFAAA9,%23FF7F8F,%23FFAAAA,%23FF7F7F,%23FFA9A9,%23FF5655,%23FFD5D6,%23FFD6D5" target="myiframe">
+         Present in Pathways</a>    
+    </nav>
+    
+
+    <!-- Iframe containing the Cholesterol Biosynthesis Pathway -->
+    <iframe src = "https://www.wikipathways.org/index.php/Pathway:WP197?view=widget" name="myiframe" id = "iframe" width="600px" height="460px"></iframe>
+
+
+    <!-- Function for highlighting the elements in iframe-->
+    <script>
+    function newPathwayHighlight(elem) {
+    var hgnc = elem.textContent
+    var iframe = document.getElementById('iframe');
+    iframe.src= "https://www.wikipathways.org/wpi/PathwayWidget.php?id=WP197&label[]=" + hgnc + "&colors=royalblue"
+    }
+    </script>
+
+    <!-- Creating and filing the table using open phacts calls. -->
+
+    <button class = "collapsible" onClick="newPathwayHighlight(this)" >HMGCS1</button>
+    <div class = "content" id = "HMGCS1">
+        
+         <script type="text/javascript">
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+                var handleAssociations = function (success, status, jsonData){
+                    var itemCount = jsonData.items.length;
+                    for (var i = 0; i < itemCount; i++) {
+                        item = jsonData.items[i]
+                        if (item.title) {
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("HMGCS1").appendChild(node);
+                        }
+                    }
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000112972","Homo sapiens", null, null, "all", null, handleAssociations); 
+            </script>
+  
+    </div>
+    
+    
+
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">HMGCR</button>
+    <div class = "content" id = "HMGCR">
+        
+        <script type="text/javascript">
+                var pathwayService = new PathwaySearch(
+                "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+                );
+                var handleAssociations = function (success, status, jsonData){
+                    var itemCount = jsonData.items.length;
+                    for (var i = 0; i < itemCount; i++) {
+                        item = jsonData.items[i]
+                        if (item.title) {
+                            var node = document.createElement("li");
+                            var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("HMGCR").appendChild(node);
+                        }
+                    }
+                };
+                    pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000113161","Homo sapiens", null, null, "all", null, handleAssociations); 
+            </script>
+        
+    </div>
+
+    
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">MVK</button>
+    <div class = "content" id = "MVK">
+
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("MVK").appendChild(node);
+                    }
+                }
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000110921","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+          
+    </div>
+    
+    
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">PMVK</button>
+    <div class = "content" id = "PMVK"> 
+        <p>No result.   </p>
+    </div>
+       
+  
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">MVD</button>
+    <div class = "content" id = "MVD"> 
+    
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("MVD").appendChild(node);
+                    }
+                }
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000167508","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+        
+    </div>
+
+        
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">IDI1</button>
+    <div class = "content" id = "IDI1">  
+
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("IDI1").appendChild(node);
+                    }
+                }
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000067064","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+        
+    </div>
+            
+        
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">FDPS</button>
+    <div class = "content" id = "FDPS">       
+
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDPS").appendChild(node);
+                    }
+                }
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+        
+    </div>
+    
+    
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">FDST1</button>
+    <div class = "content" id = "FDST1">       
+
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("FDST1").appendChild(node);
+                    }
+                }
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000079459","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+            
+    </div>
+    
+   
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">SQLE</button>
+    <div class = "content" id = "SQLE"> 
+    No result.
+    </div>
+    
+   
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">LSS</button>
+    <div class = "content" id = "LSS"> 
+
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("LSS").appendChild(node);
+                    }
+                }
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000160752","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+            
+    </div>
+    
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">CYP51A1</button>
+    <div class = "content" id = "CYP51A1"> 
+
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("CYP51A1").appendChild(node);
+                    }
+                }
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000001630","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+        
+    </div>
+   
+    
+    
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">SC4MOL</button>
+    <div class = "content" id = "SC4MOL"> 
+            No result.
+            
+    </div>         
+            
+     <button class = "collapsible"onClick="newPathwayHighlight(this)">NSDHL</button>
+     <div class = "content" id = "NSDHL"> 
+
+        No result.
+
+	</div>
+
+<!-- This code is commented out because there are no results for this gene in Open Phacts.
+    
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                                        
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("NSDHL").appendChild(node);
+                    }
+                }                                   
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000147383","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+-->
+
+    
+   
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">SC5DL</button>
+    <div class = "content" id = "SC5DL"> 
+
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("SC5DL").appendChild(node);
+                    }
+                }
+            };
+                pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000109929","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+        
+    </div>
+     
+       
+    <button class = "collapsible"onClick="newPathwayHighlight(this)">DHCR7</button>
+    <div class = "content" id = "DHCR7"> 
+
+        <script type="text/javascript">
+            var pathwayService = new PathwaySearch(
+            "https://beta.openphacts.org/2.1", "010f2bef", "ecb093b3f960b78fa0038cdb7e461bd7"
+            );
+            var handleAssociations = function (success, status, jsonData){
+                d3.select("#json").html("<pre>" + JSON.stringify(jsonData, undefined, 2) + "</pre>");
+                var itemCount = jsonData.items.length;
+                for (var i = 0; i < itemCount; i++) {
+                    item = jsonData.items[i]
+                    if (item.title) {
+                        var node = document.createElement("li");
+                        var textnode = document.createTextNode(item.title); node.appendChild(textnode); document.getElementById("DHCR7").appendChild(node);
+                    }
+                }
+            };
+            pathwayService.byTarget("http://identifiers.org/ensembl/ENSG00000172893","Homo sapiens", null, null, "all", null, handleAssociations); 
+        </script>
+        
+    </div>
+         
+<!-- Collapsible clicking -->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                        content.style.maxHeight = null;
+                    } 
+                    else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } 
+                }
+              );
+            }
+    </script>
+    
+         
+<!-- Counting the number of pathways the proteins are involved in, using Open phacts calls and storing the numbers in the in an array. -->
+
+    <script type="text/javascript">             
+     	var pathwayService = new PathwaySearch(
+     	"https://beta.openphacts.org/2.1", "010f2bef","ecb093b3f960b78fa0038cdb7e461bd7"
+         );
+	var handleAssociations = function (success, status, jsonData){
+             var primaryTopic = jsonData.primaryTopic;
+             var Targets = ['ENSG00000112972',"ENSG00000113161","ENSG00000110921","0","ENSG00000167508","ENSG00000067064","ENSG00000160752","ENSG00000079459","0","ENSG00000160285","ENSG00000001630","0","ENSG00000147383","ENSG00000109929","ENSG00000172893"];
+     	     myMap.set(Targets[i],jsonData.primaryTopic.pathway_count);
+//           Printing the values stored in the map
+             console.log(Targets[i]+' is '+myMap.get(Targets[i]));	
+             i++;}
+               
+        var myMap = new Map();        
+        var Targets = ["ENSG00000112972","ENSG00000113161","ENSG00000110921","0","ENSG00000167508","ENSG00000067064","ENSG00000160752","ENSG00000079459","0","ENSG00000160285","ENSG00000001630","0","ENSG00000147383","ENSG00000109929","ENSG00000172893"];       
+        var j = 0;      
+        var i = 0;        
+        for (j = 0; j < Targets.length; j++){        
+            if (Targets[j] == 0) {pathwayService.countPathwaysByTarget("http://identifiers.org/ensembl/ENSG00000147383","Homo sapiens", null,  handleAssociations);}     
+            else {pathwayService.countPathwaysByTarget("http://identifiers.org/ensembl/"+ Targets[j],"Homo sapiens", null,  handleAssociations);}
+        }
+ 			
+    </script>
+    
+<!--  Gradient legend  -->
+    <svg  id= "grad" height="20" width="300" style="border: 1px solid black;">
+    <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <rect x="50" y="0" width="300" height="20" fill="url(#grad1)" />
+    </svg>
+
+         
+<!-- The maximum number of pathways associated with a protein in the pathway-->
+    <p id="target1">
+        6 pathways
+    </p>
+         
+<!-- The minimumnumber of pathways associated with a protein in the pathway-->
+    <p id = "target2"
+        0 pathways
+    </p>
+      
+</body>
+
+</html>
